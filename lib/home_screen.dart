@@ -12,17 +12,16 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
   var userInput = '';
   var answer = '';
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.black,
+     return Scaffold(
+       backgroundColor: Colors.black,
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
             child: Padding(
               padding: EdgeInsets.symmetric(vertical: 20),
-              child: Column(
+               child: Column(
                   children: [
                     Expanded(
                       child: Column(
@@ -41,7 +40,7 @@ class _CalculatorState extends State<Calculator> {
                         ],
                       ),
                     ),
-                    Expanded(
+                      Expanded(
                         flex: 2,
                         child: Column(
                           children: [
@@ -190,12 +189,13 @@ class _CalculatorState extends State<Calculator> {
                               ],
                             ),
                           ],
-                        )
+                        ),
                     ),
-                  ]),
+                  ]
+              ),
             ),
           ),
-        )
+        ),
     );
   }
 
@@ -210,5 +210,4 @@ class _CalculatorState extends State<Calculator> {
       answer = 'Error';
     }
   }
-
 }
