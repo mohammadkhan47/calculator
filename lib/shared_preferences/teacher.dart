@@ -1,17 +1,20 @@
-import 'package:calculatorapp/shared_preferences/login_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+import 'login_screen.dart';
+
+class Teacher extends StatefulWidget {
+  const Teacher({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Teacher> createState() => _TeacherState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _TeacherState extends State<Teacher> {
   String email = '' ,
-      age = '';
+      age = '',
+      type = '';
   @override
   void initState() {
     // TODO: implement initState
@@ -22,6 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     SharedPreferences sp = await SharedPreferences.getInstance();
     email = sp.getString('email')?? '';
     age = sp.getString('age')?? '';
+    type = sp.getString('userType')?? '';
     setState(() {
 
     });
@@ -30,7 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HomeScreen'),
+        title: Text('Teacher View'),
         centerTitle: true,
         automaticallyImplyLeading: false,
         backgroundColor: Colors.blueAccent,
@@ -53,11 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('age'),
-              Text(age.toString())
-              
-            ],
+              children: [
+                Text('age'),
+                Text(age.toString())
+
+              ],
             ),
             SizedBox(height: 40),
             InkWell(
