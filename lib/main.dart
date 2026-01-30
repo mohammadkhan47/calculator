@@ -1,4 +1,6 @@
 import 'package:calculatorapp/shared_preferences/splash_screen.dart';
+import 'package:calculatorapp/view/Drawer.dart';
+import 'package:calculatorapp/view/dashboard.dart';
 import 'package:calculatorapp/view/splash.dart';
 import 'package:calculatorapp/viewmodel/travelviewmodel.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(create: (BuildContext context)=>Travelviewmodel(),
       child: MaterialApp(
-        home: Doctorsplash(),
+        home: DashboardScreen(),
         debugShowCheckedModeBanner: false,
       ),
     );
